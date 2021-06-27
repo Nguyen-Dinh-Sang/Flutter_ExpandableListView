@@ -79,3 +79,110 @@ class _MainPageState extends State<MainPage> {
     }
   }
 }
+
+class ExpandableList extends StatefulWidget {
+  @override
+  _ExpandableListState createState() => _ExpandableListState();
+}
+
+class _ExpandableListState extends State<ExpandableList> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return ExpansionTile(
+          title: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: <Widget>[
+                  Text(
+                    'Biển KS: ',
+                  ),
+                  Flexible(
+                      child: Text(
+                        '123567890',
+                      )),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Text(
+                    'Loại phương tiện: ',
+                  ),
+                  Text(
+                    'Xe bồn',
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Text(
+                    'Dung tích: ',
+                  ),
+                  Text(
+                    '100',
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+            ],
+          ),
+          children: [
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      'Khoang 1: 5m³ ',
+                    ),
+                    Text(
+                      ' Xăng 95',
+                    ),
+                  ],
+                ),
+                SizedBox(height: 5),
+                Row(
+                  children: [
+                    Text(
+                      'Khoang 2: 5m³ ',
+                    ),
+                    Text(
+                      ' Xăng 95',
+                    ),
+                  ],
+                ),
+                SizedBox(height: 5),
+                Row(
+                  children: [
+                    Text(
+                      'Khoang 3: 5m³ ',
+                    ),
+                    Text(
+                      ' Xăng 92',
+                    ),
+                  ],
+                ),
+                SizedBox(height: 5),
+                Row(
+                  children: [
+                    Text(
+                      'Khoang 4: 5m³ ',
+                    ),
+                    Text(
+                      ' Xăng 92',
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+      itemCount: 10,
+    );
+  }
+}
